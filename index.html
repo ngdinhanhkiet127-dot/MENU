@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <!-- Dòng này giúp trang web hiển thị đúng kích thước trên điện thoại -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie SMP</title>
+    <style>
+        body { 
+            margin: 0; padding: 20px; background-color: #030303; color: white; 
+            font-family: 'Arial', sans-serif; text-align: center; 
+            display: flex; flex-direction: column; align-items: center; 
+            justify-content: center; min-height: 100vh; 
+        }
+
+        /* Hiệu ứng cầu vồng chạy sóng biển */
+        @keyframes rainbow-wave { 
+            0% { background-position: 0% 50%; } 
+            100% { background-position: 300% 50%; } 
+        }
+
+        .rainbow-effect {
+            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+            background-size: 300% 100%;
+            animation: rainbow-wave 4s linear infinite;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .rainbow-text { -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+        .ip-box { 
+            background: #1a1a1a; padding: 15px; border-radius: 10px; 
+            margin: 20px 0; border: 1px solid #ff69b4; width: 90%; max-width: 300px;
+        }
+
+        /* Nút bấm 7 màu cầu vồng */
+        .btn {
+            display: block; width: 80%; max-width: 250px; margin: 15px auto; 
+            padding: 15px; border-radius: 50px; text-decoration: none; 
+            font-weight: bold; color: white; border: none; cursor: pointer; 
+            font-size: 18px; text-shadow: 1px 1px 2px black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="rainbow-text rainbow-effect">COOKIE SMP</h1>
+    <p>Cộng đồng sinh tồn chuyên nghiệp</p>
+
+    <div class="ip-box">
+        IP: <span id="serverIp">Play1.nvnmc.top:25589</span>
+    </div>
+
+    <!-- Nút Copy IP (7 màu) -->
+    <button class="btn rainbow-effect" onclick="copyIP()">COPY IP</button>
+
+    <!-- Nút Discord (7 màu) -->
+    <a href="https://discord.gg/link-cua-ban" class="btn rainbow-effect">DISCORD</a>
+
+    <script>
+        function copyIP() {
+            var text = document.getElementById("serverIp").innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Đã copy IP: " + text);
+            });
+        }
+    </script>
+</body>
+</html>
